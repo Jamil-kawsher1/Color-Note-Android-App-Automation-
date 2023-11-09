@@ -1,3 +1,5 @@
+const addNoteHomeScreen = require('../screenObject/addNote.screen')
+
 describe("Add Note", () => {
 
 
@@ -6,37 +8,36 @@ describe("Add Note", () => {
 
 
         //Skiping Welcome Screen
+        await addNoteHomeScreen.skipBtn.click()
 
-        await $("//android.widget.Button[@resource-id='com.socialnmobile.dictapps.notepad.color.note:id/btn_start_skip']").click()
 
         //clicking on Add + icon
 
-        await $("~Add").click()
+        await addNoteHomeScreen.addBtn.click()
 
         //Clicking On Note Type (Text) using resource Id
 
-        await $("//android.widget.TextView[@resource-id='com.socialnmobile.dictapps.notepad.color.note:id/text']").click()
+        await addNoteHomeScreen.textTypeNoteOption.click()
 
 
         // clicking on title
-        let tittleField = await $('//android.widget.EditText[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/edit_title"]');
-        await tittleField.click()
-        await tittleField.setValue("Hello Word!!!")
+        await addNoteHomeScreen.noteTitle.click()
 
-        let noteBody = await $('//android.widget.EditText[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/edit_note"]');
+        await addNoteHomeScreen.noteTitle.setValue("Test note 1")
 
-        await noteBody.click();
 
-        await noteBody.setValue("Hi This Is Jamil !!!!!\nA Junior Test Automation Enginner In meldCX")
 
-        let backBtn = await $('//android.widget.ImageButton[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/back_btn"]');
+        //clicking on note body and adding value
+        await addNoteHomeScreen.noteBody.click()
 
-        //Saving Changes
-        await backBtn.click()
+        await addNoteHomeScreen.noteBody.setValue("Hi This Is Jamil !!!!!\nA Junior Test Automation Enginner In meldCX")
 
-        //navigating back to Home page
+        // clicking on save and back button
+        await addNoteHomeScreen.backBtn.click()
 
-        await backBtn.click()
+        //Saving Changes and navigating back to Home page
+        await addNoteHomeScreen.backBtn.click()
+
 
 
 
