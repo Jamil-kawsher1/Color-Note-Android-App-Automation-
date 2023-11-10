@@ -42,9 +42,15 @@ class addNoteScrren {
         // Allowing Permiison
 
 
-        //Skiping Welcome Screen
-        await this.skipBtn.click()
+        //checking for Skip button
 
+        let skipBtnAvailability = await this.skipBtn.isExisting()
+
+        if (skipBtnAvailability) {
+            //Skiping Welcome Screen
+            await this.skipBtn.click()
+
+        }
 
         //clicking on Add + icon
 
@@ -78,6 +84,12 @@ class addNoteScrren {
 
         //
         await browser.pause(4000)
+
+
+
+
+
+
 
 
     }
