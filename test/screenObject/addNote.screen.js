@@ -38,6 +38,49 @@ class addNoteScrren {
     }
 
 
+    async addNote(noteTitle, noteDescription) {
+        // Allowing Permiison
+
+
+        //Skiping Welcome Screen
+        await this.skipBtn.click()
+
+
+        //clicking on Add + icon
+
+        await this.addBtn.click()
+
+        //Clicking On Note Type (Text) using resource Id
+
+        await this.textTypeNoteOption.click()
+
+
+        // clicking on title
+        await this.noteTitle.click()
+
+        await this.noteTitle.setValue(noteTitle)
+
+
+
+        //clicking on note body and adding value
+        await this.noteBody.click()
+
+        await this.noteBody.setValue(noteDescription)
+
+        // clicking on save and back button
+        await this.backBtn.click()
+
+        //Saving Changes and navigating back to Home page
+        await this.backBtn.click()
+
+
+
+
+        //
+        await browser.pause(4000)
+
+
+    }
 }
 
 module.exports = new addNoteScrren();
