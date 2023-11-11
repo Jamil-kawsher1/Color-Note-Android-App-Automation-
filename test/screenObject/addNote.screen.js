@@ -95,4 +95,4 @@ class addNoteScrren {
     }
 }
 
-module.exports = new addNoteScrren();
+module.exports = new addNoteScrren()
