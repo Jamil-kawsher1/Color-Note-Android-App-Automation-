@@ -1,6 +1,7 @@
 
 const fs = require('fs')
 const addNoteHomeScreen = require('../screenObject/addNote.screen')
+const path = require('path')
 
 describe("Add Note", () => {
 
@@ -15,9 +16,9 @@ describe("Add Note", () => {
 
     })
 
-
+   
     it.only("Add Multiple Note at Once.", async () => {
-        var noteJsonData = await fs.readFileSync('D:\\appium\\ColorNoteApp\\test\\Data\\notes.json', 'utf8');
+        var noteJsonData = await fs.readFileSync(path.join(process.cwd(), "test\\Data\\notes.json"), 'utf8');
         var notesConvertedObject = await JSON.parse(noteJsonData);
         await browser.pause(2000)
 

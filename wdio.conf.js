@@ -73,8 +73,7 @@ exports.config = {
             "appium:deviceName": "emulator-5554",
             "appium:platformVersion": "14.0",
             "appium:automationName": "UiAutomator2",
-            "appium:app":
-                "D:\\appium\\ColorNoteApp\\Android\\App\\colorNote.apk",
+            "appium:app": path.join(process.cwd(), "Android\\App\\colorNote.apk"),
             "appium:autoGrantPermissions": true
 
             // "appium:noReset": true,
