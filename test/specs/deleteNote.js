@@ -46,7 +46,7 @@ describe("delete Note", async () => {
 
         browser.pause(2000)
 
-        for (let i = 3; i < 5; i++) {
+        for (let i = 0; i < await deleteNoteScreen.noteByindex.length; i++) {
 
 
             console.log("Current Index number is....", i);
@@ -70,6 +70,8 @@ describe("delete Note", async () => {
 
 
 
+
+        it("Deelete Specif")
 
 
 
