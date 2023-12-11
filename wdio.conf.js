@@ -74,7 +74,9 @@ exports.config = {
             "appium:platformVersion": "14.0",
             "appium:automationName": "UiAutomator2",
             "appium:app": path.join(process.cwd(), "Android\\App\\colorNote.apk"),
-            "appium:autoGrantPermissions": true
+            "appium:autoGrantPermissions": true,
+            "appium:noReset": true, // Set to true if you want to clear app data before each run
+            "appium:fullReset": false, // Set to true for a full app reset
 
             // "appium:noReset": true,
         },
