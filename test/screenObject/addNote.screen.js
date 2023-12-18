@@ -1,3 +1,13 @@
+// import RandomNumberGenarator from "../utils/RandomNumberGenarator";
+// import addNoteByColorScreen from "./addNoteByColor.screen";
+// const RandomNumberGenarator = require('../utils/RandomNumberGenarator');
+
+const RandomNumberGenarator = require("../utils/RandomNumberGenarator");
+const addNoteByColorScreen = require("./addNoteByColor.screen");
+
+
+// const addNoteByColorScreen = require("./addNoteByColor.screen")
+// RandomNumberGenarator
 class addNoteScrren {
 
     //skip btn Home Page
@@ -87,6 +97,104 @@ class addNoteScrren {
 
 
 
+
+
+
+
+
+    }
+
+
+    async addNoteCustomNumber(noteCount, type, colorName) {
+
+        let loopRunner = async () => {
+            for (let i = 0; i <= noteCount; i++) {
+
+                let currentRand = RandomNumberGenarator.randomNumber()
+
+                let noteTitle = `randomTitle ${currentRand}`;
+
+                let noteDescription = ` This a random Description with Random title ${currentRand}`;
+
+                await this.addNote(noteTitle, noteDescription);
+
+
+
+
+
+
+            }
+
+        }
+
+        if (type == 'randomColorNote') {
+
+
+            await addNoteByColorScreen.selectRandomColorForNotes()
+            // for (let i = 0; i <= noteCount; i++) {
+
+            //     let currentRand = RandomNumberGenarator.randomNumber()
+
+            //     let noteTitle = `randomTitle ${currentRand}`;
+
+            //     let noteDescription = ` This a random Description with Random title ${currentRand}`;
+
+
+            //     await this.addNote(noteTitle, noteDescription);
+
+
+
+
+
+
+            // }
+
+            await loopRunner();
+
+        } else if (type == 'customColorNote') {
+            //Available Color as Parameter
+
+            /*
+            1. red
+            2. orange
+            3. yellow
+            4. green
+            5. sky blue
+            6. purple
+            7. black
+            8. ash
+            9. white
+            
+            */
+            await addNoteByColorScreen.pickNoteColor(colorName)
+            // for (let i = 0; i <= noteCount; i++) {
+
+            //     let currentRand = RandomNumberGenarator.randomNumber()
+
+            //     let noteTitle = `randomTitle ${currentRand}`;
+
+            //     let noteDescription = ` This a random Description with Random title ${currentRand}`;
+
+
+            //     await this.addNote(noteTitle, noteDescription);
+
+
+
+
+
+
+            // }
+
+            await loopRunner()
+        }
+        else if (type == 'normalNote') {
+
+            await loopRunner()
+        }
+        else {
+            console.log("invalid Color Method Selection Available Perameter 1.randomColorNote 2.customColorNote 3.normalNote")
+            return 0;
+        }
 
 
 

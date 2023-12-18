@@ -1,5 +1,6 @@
 const addNoteScreen = require("./addNote.screen");
 
+
 class addNoteByColorScreen {
 
     get noteColorPickerMainBtn() {
@@ -73,7 +74,9 @@ class addNoteByColorScreen {
 
     async selectRandomColorForNotes() {
 
-        let skipBtnAvailability = await addNoteScreen.skipBtn.isExisting()
+        // let skipBtnAvailability = await addNoteScreen.skipBtn.isExisting()
+
+        let skipBtnAvailability = await addNoteScreen.skipBtn.isExisting();
 
         if (skipBtnAvailability) {
 

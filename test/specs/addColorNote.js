@@ -10,7 +10,8 @@ describe("Add Note With Color", () => {
 
 
         await addNoteByColorScreen.pickNoteColor("red")
-        // await addNoteByColorScreen.selectRandomColorForNotes()
-        await addNoteScreen.addNote("red1", "hello everyone welcome to red note")
+        await addNoteByColorScreen.selectRandomColorForNotes()
+        await addNoteScreen.addNote("test11", "Hello World This is jamil")
+        // await addNoteScreen.addNote("red1", "hello everyone welcome to red note")
     })
 })

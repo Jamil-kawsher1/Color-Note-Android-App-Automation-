@@ -16,8 +16,8 @@ describe("Add Note", () => {
 
     })
 
-   
-    it.only("Add Multiple Note at Once.", async () => {
+
+    it("Add Multiple Note at Once.", async () => {
         var noteJsonData = await fs.readFileSync(path.join(process.cwd(), "test\\Data\\notes.json"), 'utf8');
         var notesConvertedObject = await JSON.parse(noteJsonData);
         await browser.pause(2000)
@@ -27,6 +27,13 @@ describe("Add Note", () => {
 
             await addNoteHomeScreen.addNote(notesConvertedObject.notetitle[i], notesConvertedObject.noteDescription[i])
         }
+
+    })
+
+    it.only("Add Note Custom Number", async () => {
+
+        await addNoteHomeScreen.addNoteCustomNumber(3, 'randomColorNote');
+
 
     })
 })
